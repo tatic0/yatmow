@@ -1,0 +1,39 @@
+# code made from examples from:
+# http://www.tldp.org/LDP/abs/html/tabexpansion.html
+
+_tmsessions ()   
+{                 
+  local cur
+  
+  sessionlist=`echo -n "$(tmux list-session|awk -F ':' '{print $1}')"`
+  COMPREPLY=()   
+  cur=${COMP_WORDS[COMP_CWORD]}
+
+  case "$cur" in
+   *)
+   COMPREPLY=( $( compgen -W '$sessionlist' $cur ) );; 
+  esac
+  return 0
+}
+
+
+_tmksessions ()   
+{                 
+  local cur
+  
+  sessionlist=`echo -n "$(tmux list-session|awk -F ':' '{print $1}')"`
+  COMPREPLY=()   
+  cur=${COMP_WORDS[COMP_CWORD]}
+
+  case "$cur" in
+   *)
+   COMPREPLY=( $( compgen -W '$sessionlist' $cur ) );;
+  esac
+  return 0
+}
+
+
+complete -F _tmsessions tma.sh
+complete -F _tmsessions ./tma.sh 
+complete -F _tmksessions tmk.sh
+complete -F _tmksessions ./tmk.sh
