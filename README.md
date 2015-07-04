@@ -1,5 +1,5 @@
 # yatmow
-yet another rmux original wrapper
+yet another tmux original wrapper
 
 Usage
 -----
