@@ -3,11 +3,13 @@ yet another tmux original wrapper
 
 Usage
 -----
-
 You can copy all files to your ~/bin, that should be enough.
 If this does not work for you, you can source tmsessions on you .bashrc or so.
 Or you can use at your own risk ;) the installer script.
 
+Install
+-------
+Use the installer script, logout, login, that should be all.
 
 Author
 ------
